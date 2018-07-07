@@ -3,7 +3,7 @@
 const Task = require('../models/Task')
 
 function list(req, res) {
-    Task.find({}, (error, tasks) => {
+    Task.find({user: req.query.user}, (error, tasks) => {
         if(error) res.status(500).send({message: `Ha ocurrido un error al obtener los elementos: ${error}`})
         res.send(tasks)
     })
@@ -12,7 +12,8 @@ function list(req, res) {
 function create(req, res) {
 
     var task = new Task({
-        name: req.body.name
+        name: req.body.name,
+        user: req.body.user
     })
 
     task.save((error, taskSaved) => {
