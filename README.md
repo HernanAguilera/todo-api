@@ -1,4 +1,4 @@
-# Cliente Angular
+# API Node
 
 > Es necesario tener instalado node.js para correr este proyecto.
 
@@ -26,7 +26,7 @@ npm install
 
 1. Iniciar el servidor
 ```
-ng serve
+npm run dev
 ```
 
 2. Abrir el navegador en `http://localhost:3000/api/tasks`
